@@ -7,8 +7,8 @@
 
 ## 2.  Accessing the environment.
 - The system is located at https://sn.ws.broadcom.com
-- Your login: is mfwsuser26@demo.broadcom.com
-- The password is Handsonlab@2026
+- Your login: is _SNCUST026
+- The password is _SNCUST026
 
 One you log in, select the environment:
 ![simpleCommand](assets/content/login.png)
@@ -18,11 +18,13 @@ One you log in, select the environment:
 - You have been assigned a single set of login credentials for accessing all of the Mainframe resources on a remote z/OS LPAR which is hosted by Broadcom.
 
 - Your userid is CUST026.
-- Your password CUST026.
+- Your password _MFCUST026.
 
-Service                                                                                                                                                            Connection Information (Host:Port)
-z/OSMF                                                                                                                                                             TODO:1443
-CA Endevor                                                                                                                                                         TODO:6002
+| Service | Connection Information (Host:Port) |
+| ------- | ---------------------------------- |
+| z/OSMF     |  10.1.2.55:1443 |
+| CA Endevor |  10.1.2.55:6002 |
+
 
 This is just information for you.  The details have been stored in your zowe.config.json file for you.
 
@@ -49,8 +51,8 @@ Finally, we want to automate the job so it can be run from a pipeline tool, such
 In order to automate the build of an application, we need to build it manually first.  Our application has 2 parts, a COBOL file, which has dependencies on COPYBOOKS.  And it also has an LNK file.  We must build each of those manually to ensure we don't have any errors.
 
 - Run the following commands and ensure we get a 0000 return code:
-  - `zowe endevor generate DOGGOS26 --type COBOL --os --maxrc 0 --sn 1 --cb`
-  - `zowe endevor generate DOGGOS26 --type LNK --os --maxrc 0 --sn 1 --cb`
+  - `zowe endevor generate element DOGGOS26 --type COBOL --os --maxrc 0 --sn 1 --cb`
+  - `zowe endevor generate element DOGGOS26 --type LNK --os --maxrc 0 --sn 1 --cb`
 
 - This command uses Zowe to interact with Endevor.  We pass the command, `generate` and it takes an element name as a parameter.  
 - We pass the following options:
@@ -66,7 +68,7 @@ If you have any issues with these commands, reach out to the instructions.
 - This is a batch application.  Once it is compiled, this application is ready to run.
 
 - To execute the application and see the output, we can call `zowe jobs`.
-  - `zowe jobs submit dataset CUST026.PUBLIC.JCL(NDRUNDOG) --vasc`
+  - `zowe jobs submit dataset _MFCUST026.PUBLIC.JCL(NDRUNDOG) --vasc`
 
 - `--vasc` is a great command when testing.  The output is displayed across your screen when the job completes.  For jobs like this one, we can see the job output and ensure the application runs. 
 
@@ -214,7 +216,7 @@ We can now build one or more components with a single command.  And each command
 
 ## 16. Let's run the application
 Last time we ran the application, in the command line we executed:
-`zowe jobs submit data-set "CUST026.MARBLES.JCL(MARBCOPY)" --vasc`
+`zowe jobs submit data-set "CUST026.PUBLIC.JCL(NDRUNDOG)" --vasc`
 
 But now we have a function to download the job, capture output values and retun information to us called `submitJobAndDownloadOutput`.   We call this from the Duty Run command.
   - It uses a function, submitJobAndDownloadOutput(...) to submit the job, check the return code and write the output.
