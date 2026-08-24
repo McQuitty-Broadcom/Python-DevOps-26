@@ -2,7 +2,7 @@
     "runJCL"                    : "CUST026.PUBLIC.JCL(NDRUNDOG)",
     "endevorEnvironment"        : "DEV",
     "endevorInstance"           : "ENDEVOR",
-    "endevorSubsystem"          : "DOGGOS",
-    "endevorSystem"             : "CUST026",
+    "endevorSubsystem"          : "CUST026",
+    "endevorSystem"             : "DOGGOS",
     "element"                   : "DOGGOS26"
 }

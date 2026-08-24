@@ -7,8 +7,8 @@
 
 ## 2.  Accessing the environment.
 - The system is located at https://sn.ws.broadcom.com
-- Your login: is _SNCUST026
-- The password is _SNCUST026
+- Your login: is mfwsuser26@demo.broadcom.com
+- The password is Handsonlab@2026
 
 One you log in, select the environment:
 ![simpleCommand](assets/content/login.png)
@@ -18,7 +18,7 @@ One you log in, select the environment:
 - You have been assigned a single set of login credentials for accessing all of the Mainframe resources on a remote z/OS LPAR which is hosted by Broadcom.
 
 - Your userid is CUST026.
-- Your password _MFCUST026.
+- Your password CUST026.
 
 | Service | Connection Information (Host:Port) |
 | ------- | ---------------------------------- |
@@ -68,7 +68,7 @@ If you have any issues with these commands, reach out to the instructions.
 - This is a batch application.  Once it is compiled, this application is ready to run.
 
 - To execute the application and see the output, we can call `zowe jobs`.
-  - `zowe jobs submit dataset _MFCUST026.PUBLIC.JCL(NDRUNDOG) --vasc`
+  - `zowe jobs submit dataset CUST026.PUBLIC.JCL(NDRUNDOG) --vasc`
 
 - `--vasc` is a great command when testing.  The output is displayed across your screen when the job completes.  For jobs like this one, we can see the job output and ensure the application runs. 
 
@@ -172,7 +172,7 @@ Save the file, and in the terminal run:
 `duty build-cobol`
 
 It should return with output that looks like this:
-![duty-cobol-output](assets/content/duty-cobol-output.png)
+![duty-cobol-output](assets/content/duty-build-output.png)
 
 ## 14. Updating Build-Lnk
 We've successfully build the COBOL program in the last step.  We can literally copy the same `command=` line and paste it into the `build-lnk` section and modify it.
@@ -322,7 +322,7 @@ If you go back to the main page (after you logged in, where you launched VS Code
 Click on Jenkins.  It will prompt you to log in.
 
 Use the following credentials:
-Username: _JENKINSCUST026
+Username: mfuser26
 Password: Mfuser26@26
 
 You will be presented with a page that will contain some builds.  
