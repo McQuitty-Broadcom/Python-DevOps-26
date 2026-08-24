@@ -11,6 +11,7 @@
 - The password is Handsonlab@2026
 
 One you log in, select the environment:
+
 ![simpleCommand](assets/content/login.png)
 
 ## 3. z/OS Services
@@ -73,6 +74,7 @@ If you have any issues with these commands, reach out to the instructions.
 - `--vasc` is a great command when testing.  The output is displayed across your screen when the job completes.  For jobs like this one, we can see the job output and ensure the application runs. 
 
 - You should see output with dog adoptions like this:
+
 ![Graphic 1 from slide 18](assets/content/doggos_output.png)
 
 ## 8. Reporting for Duty
@@ -132,6 +134,7 @@ The `command=` is a string that details the command we want to run.
 The `simpleCommand` runs the command and stores the output in a folder called "output"
 
 ## 12. Understanding Simple Command
+
 ![simpleCommand](assets/content/simpleCommand.png)
 
 - It's important to understand how the simpleCommand works.  
@@ -172,6 +175,7 @@ Save the file, and in the terminal run:
 `duty build-cobol`
 
 It should return with output that looks like this:
+
 ![duty-cobol-output](assets/content/duty-build-output.png)
 
 ## 14. Updating Build-Lnk
@@ -333,11 +337,13 @@ Most of our workshops focus on getting to this point and providing a cooking sho
 Let's create a build using your name.  You will see other's builds in this environment, so don't be alarmed if the screen shows more build definitions as you work through this.
 
 In the upper left corner, click New Item.  
+
 ![new_item](assets/content/jenkins_new.png)
 
 This will allow us to create a new build.
 
 ## 26. Setting the Build Name
+
 ![new_pipeline](assets/content/jenkins_pipeline.png)
 
 In the "Enter an Item Name" field, enter:
@@ -349,9 +355,11 @@ Then select Pipeline and click next.
 
 ## 27. Setting up the Build
 On the left side, click "Pipeline" and the screen will move to the pipeline section:
+
 ![define_pipeline](assets/content/jenkins_pipeline_value.png)
 
 Change the value from Pipeline script to Pipeline script from SCM.
+
 ![script_pipeline](assets/content/jenkins_pipeline_script.png)
 
 Change SCM from none to git.  The screen will change adding new fields.
